@@ -7,6 +7,8 @@ var countDownDate = new Date()
 countDownDate.setHours(14);
 countDownDate.setMinutes(30);
 countDownDate.setSeconds(0);
+countDownDate.setTime(countDownDate.getTime() + countDownDate.getTimezoneOffset() * 60 * 1000 /* convert to UTC */ + (/* UTC+8 */ 8) * 60 * 60 * 1000);
+
 
 // Get today's date and time
 var now = new Date().getTime();
@@ -42,6 +44,7 @@ var x = setInterval(function () {
 
     // While the session is active
     if (distance < 0 && hours > -2) {
+        $("#zoomBt").css("visibility","visible");
         $('#zoomBt').click(function(){
             window.location.assign("https://us02web.zoom.us/j/7461305803?pwd=Yms2L0Q2RzhteVhvV2pIYkVDbzAydz09");
         });
@@ -51,6 +54,7 @@ var x = setInterval(function () {
         $('#zoomBt').click(function(){
             window.location.assign("#");
         });
+        $("#zoomBt").css("visibility","visible");
         $("#zoomBt").css("opacity","0.5");
         $("#zoomBt").text("Zoom not available");
     }
