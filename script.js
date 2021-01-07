@@ -45,6 +45,7 @@ var x = setInterval(function () {
     // While the session is active
     if (distance < 0 && hours > -2) {
         $("#zoomBt").css("visibility","visible");
+        $("#zoomBt").css("opacity","1");
         $('#zoomBt').click(function(){
             window.location.assign("https://us02web.zoom.us/j/7461305803?pwd=Yms2L0Q2RzhteVhvV2pIYkVDbzAydz09");
         });
